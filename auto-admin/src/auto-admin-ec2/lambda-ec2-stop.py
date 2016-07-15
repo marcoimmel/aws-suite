@@ -21,9 +21,10 @@ def event_handler(event, context):
     ]
 
     instances = ec2.instances.filter(Filters=filters)
-
-    if len(instances) > 0:
+    instance_ids = [instance.id for instance in instances]
+    
+    if len(instance_ids) > 0:
         instances.stop()
-        logger.info('Instances shutting down: {}'.format([instance.id for instance in instances]))
+        logger.info('Instances shutting down: {}'.format(instance_ids))
     else:
         logger.info('Nothing to shut down')
