@@ -13,7 +13,7 @@
 # limitations under the License.
 # ------------------------------------------------------------------------
 #
-# this aws lambda functions locates ec2 instances and stops them
+# this aws lambda functions locates ec2 instances and starts or stopps them
 # the function can be invoked by a cloudwatch scheduled event
 #
 
