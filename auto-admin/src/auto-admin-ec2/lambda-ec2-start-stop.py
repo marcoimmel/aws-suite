@@ -23,12 +23,13 @@ import boto3
 logger = logging.getLogger('auto-admin-logger')
 logger.setLevel(logging.INFO)
 
+
 def event_handler(event, context):
     ec2 = boto3.resource('ec2')
     logger.info('{} ec2 instances requested'.format(event['action']))
-    
+
     start = True if event['action'] == 'start' else False
-    
+
     filters = [
         {
             'Name':  'tag:AutoOn' if start else 'tag:AutoOff',
@@ -42,7 +43,7 @@ def event_handler(event, context):
 
     instances = ec2.instances.filter(Filters=filters)
     instance_ids = [instance.id for instance in instances]
-    
+
     if len(instance_ids) > 0:
         instances.start() if start else instances.stop()
         logger.info('Processing instances: {}'.format(instance_ids))
