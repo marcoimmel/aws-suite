@@ -1,4 +1,9 @@
-# Copyright 2016 marcoimmel
+# Copyright (c) 2016 marcoimmel
+#
+# Author: Marco Immel <marco.immel@gmail.com>
+# Source: https://marcoimmel.github.io
+#         https://github.com/marcoimmel/aws-suite
+#
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
